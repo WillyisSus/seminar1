@@ -1,0 +1,124 @@
+# openapi.yaml
+openapi: 3.0.0
+info:
+  title: My Actors API
+  description: A simple API to manage actors for my Express project.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+components: 
+  schemas:
+    Actor:
+      type: object
+      description: Return body from the server for specific methods
+      properties:
+        actor_id:
+          type: integer
+          example: 1
+        first_name:
+          type: string
+          example: 'PENELOPE'
+        last_name:
+          type: string
+          example: 'GUINESS'
+        # --- ADD THIS NEW SECTION ---
+        last_update:
+          type: string
+          format: date-time
+          description: The timestamp of when the record was last updated.
+          example: '2025-10-12T15:22:43.000Z'
+    BodyActor:
+      type: object
+      description: Request body for POST and PUT methods
+      properties:
+        first_name:
+          type: string
+          example: 'PENELOPE'
+        last_name:
+          type: string
+          example: 'GUINESS'
+        # --- ADD THIS NEW SECTION ---
+paths:
+  /actors:
+    get:
+      summary: Retrieves a list of all actors.
+      description: Returns an array of actor objects.
+      responses:
+        '200':
+          description: A successful response with a list of actors.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Actor'
+    post:
+      summary: Create a single actor.
+      description: Returns a newly created actor object if request is executed.
+      requestBody:
+        description: Actor object to be created
+        required: true
+        content:
+          application/json: # The media type
+            schema:
+              $ref: '#/components/schemas/BodyActor'
+      responses:
+        '200':
+          description: A successful response with a single actor.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actor'
+        '400':
+          description: Bad Request when missing body or alike.
+          content:
+            application/json:
+              schema:
+                msg: "Bad Request"
+  /actors/{id}:
+    get:
+      summary: Retrieves a single actor by their ID.
+      description: Returns a single actor object.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the actor to retrieve.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A successful response with a single actor.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actor'
+        '404':
+          description: Actor not found.
+    put:
+      summary: Update a single actor by their ID.
+      description: Returns a single updated actor object if request is executed.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the actor to retrieve.
+          schema:
+            type: integer
+      requestBody:
+        description: Actor object to be updated
+        required: true
+        content:
+          application/json: # The media type
+            schema:
+              $ref: '#/components/schemas/BodyActor'
+      responses:
+        '200':
+          description: A successful response with a single actor.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actor'
+        '404':
+          description: Actor not found.

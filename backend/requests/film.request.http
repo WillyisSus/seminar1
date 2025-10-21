@@ -1,0 +1,24 @@
+GET http://localhost:3000/films
+###
+GET http://localhost:3000/films/1
+###
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+    "title":"Seminar 2",
+    "language_id": 1,
+    "rental_duration": 2,
+    "rental_rate": 4.99,
+    "replacement_cost": 10.99
+}
+###
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+    "language_id": 1,
+    "rental_duration": 2,
+    "rental_rate": 4.99,
+    "replacement_cost": 10.99
+}
