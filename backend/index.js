@@ -6,34 +6,17 @@ import filmRoute from "./routes/film.route.js";
 import { configDotenv } from "dotenv";
 import YAML from "yamljs";
 import {serve, setup} from "swagger-ui-express";
-import logger from "./utils/logger.js";
-import morganHttpHelper from "./utils/morgan.js";
+import morganHttpHelper from "./utils/loggerHelper.js";
 configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
-
-// const customString = ':method :url :status :remote-addr - :remote-user  :res[content-length] - :response-time ms'
-app.use(morgan('combined'))
+// morgan.token('req-body', function (req, res){return req.body?JSON.stringify(req.body):'no-body'})
+// const customString = ':method :url :req-body :status :remote-addr - :remote-user  :res[content-length] - :response-time ms'
+// app.use(morgan(customString))
 app.use(morganHttpHelper)
 const port = 3000;
-// const db = mysql2.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "vOvieTlonG0108@",
-//     database: "sakila",
-// })
 
-// db.connect((err) => {
-//     if (err) {
-//         console.error('Database connection failed: ' + err.stack);
-//         return;
-//     }
-//     console.log('Connected to MySQL as ID ' + db.threadId);
-// });
-
-
-// Simple route to test
 app.get('/', (req, res) => {
     res.send('MySQL + Express connected!');
 });

@@ -1,3 +1,0 @@
-{"level":"http","message":"GET /films/1 200 ::ffff:127.0.0.1 - -  406 - 22.798 ms","timestamp":"2025-10-20T01:28:42.730Z"}
-{"level":"http","message":"::ffff:127.0.0.1 - - [20/Oct/2025:01:43:44 +0000] \"GET /films HTTP/1.1\" 200 406208 \"-\" \"vscode-restclient\"","timestamp":"2025-10-20T01:43:44.134Z"}
-{"level":"http","message":"::ffff:127.0.0.1 - - [20/Oct/2025:01:43:44 +0000] \"GET /films HTTP/1.1\" 200 406208 \"-\" \"vscode-restclient\"","timestamp":"2025-10-20T01:43:44.978Z"}
