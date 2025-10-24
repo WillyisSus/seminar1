@@ -1,0 +1,29 @@
+GET http://localhost:3000/actors
+###
+GET http://localhost:3000/actors/1
+###
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "first_name": "Ryan",
+  "last_name": "Reynolds"
+}
+###
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+    "first_name": "Ryan"
+}
+###
+DELETE  http://localhost:3000/actors/1
+###
+PUT http://localhost:3000/actors/2
+Content-Type: application/json
+
+{
+    "first_name": "Vo",
+    "last_name": "Viet Long"
+
+}

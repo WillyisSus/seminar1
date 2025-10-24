@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # 1. The Database
+  elasticsearch:
+    image: elasticsearch:8.11.1 # Pick a specific version
+    container_name: elasticsearch
+    environment:
+      # This is required for a single-node development setup
+      - discovery.type=single-node
+      # WARNING: This disables security. ONLY use this for local development.
+      - xpack.security.enabled=false
+      # Set heap size to save your computer's RAM
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      # This saves your Elasticsearch data even if you stop the container
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      # Expose port 9200 to your local machine
+      - "9200:9200"
+    networks:
+      - elastic-net
+
+  # 2. The Dashboard UI
+  kibana:
+    image: kibana:8.11.1 # Version MUST match Elasticsearch
+    container_name: kibana
+    environment:
+      # Tells Kibana where to find the Elasticsearch container
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      # Expose port 5601 to your local machine
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic-net
+
+  # 3. The Log Shipper
+  filebeat:
+    image: elastic/filebeat:8.11.1 # Version MUST match
+    container_name: filebeat
+    depends_on:
+      - elasticsearch
+      - kibana
+
+    # Run as root to allow copying and chmod
+    user: root 
+
+    volumes:
+      # 1. Mount your config file to a TEMPORARY, simple path
+      - ./yaml/filebeat.yml:/tmp/my-filebeat.yml:ro
+
+      # 2. Keep your logs mount
+      - ./logs:/var/log/my-app:ro
+    networks:
+      - elastic-net
+      
+    # 3. New command to copy, fix permissions, and then run
+    command: >
+      sh -c "
+        cp /tmp/my-filebeat.yml /usr/share/filebeat/filebeat.yml &&
+        chmod go-w /usr/share/filebeat/filebeat.yml &&
+        /usr/share/filebeat/filebeat -e
+      "
+
+# Define the network for containers to talk to each other
+networks:
+  elastic-net:
+    driver: bridge
+
+# Define the volume for saving Elasticsearch data
+volumes:
+  es-data:
+    driver: local

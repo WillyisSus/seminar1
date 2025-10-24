@@ -1,0 +1,29 @@
+# ================== Filebeat inputs ==================
+filebeat.inputs:
+- type: log
+  enabled: true
+  
+  # -----------------------------------------------------------------
+  # This is the path *INSIDE* the Docker container
+  # We will map your './logs' folder to this path in the next step
+  # -----------------------------------------------------------------
+  paths:
+    - /var/log/my-app/*.log
+    
+  # This tells Filebeat how to parse your JSON logs
+  # (Assumes you are using Winston to log as JSON)
+  json.keys_under_root: true
+  json.add_error_key: true
+  json.message_key: message
+
+# ================== Outputs ==================
+# Send the data to the 'elasticsearch' container
+output.elasticsearch:
+  # 'elasticsearch' is the hostname of the container (see docker-compose.yml)
+  hosts: ["elasticsearch:9200"]
+
+# ================== Kibana ==================
+# This is for setting up default dashboards
+setup.kibana:
+  # 'kibana' is the hostname of the container
+  host: "kibana:5601"

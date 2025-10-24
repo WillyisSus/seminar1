@@ -2,7 +2,6 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database.js'; // Import the connection
 
 const Actor = sequelize.define('Actor', {
-  // Model attributes are defined here
   actor_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -22,9 +21,8 @@ const Actor = sequelize.define('Actor', {
     allowNull: false
   }
 }, {
-  // Other model options go here
-  tableName: 'actor',   // Explicitly tell Sequelize the table name
-  timestamps: false     // Disable timestamps (createdAt and updatedAt)
+  tableName: 'actor',   
+  timestamps: false    
 });
 
 export default Actor;

@@ -22,3 +22,16 @@ Content-Type: application/json
     "rental_rate": 4.99,
     "replacement_cost": 10.99
 }
+###
+DELETE  http://localhost:3000/films/1
+###
+PUT http://localhost:3000/films/2
+Content-Type: application/json
+
+{
+    "title": "A new title",
+    "language_id": 1,
+    "rental_duration": 2,
+    "rental_rate": 4.99,
+    "replacement_cost": 10.99
+}
