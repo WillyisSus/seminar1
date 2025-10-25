@@ -1,9 +1,8 @@
 import morgan from "morgan";
 import logger from "./logger.js"
-import { Json } from "sequelize/lib/utils";
 
 morgan.token('req-body', function(req, res){return JSON.stringify(req.body?req.body:'')})
-const morganHttpHelper = morgan((tokens, req, res ) => {
+const loggerHelper = morgan((tokens, req, res ) => {
     return  JSON.stringify({
         status: tokens.status(req, res),
         method: tokens.method(req, res),
@@ -30,4 +29,4 @@ const morganHttpHelper = morgan((tokens, req, res ) => {
 }) 
 
 
-export default morganHttpHelper;
+export default loggerHelper;

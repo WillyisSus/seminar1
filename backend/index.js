@@ -1,17 +1,16 @@
 import express from "express";
-import morgan from "morgan";
 import sequelize from "./configs/database.js";
 import actorRoute from "./routes/actor.route.js";
 import filmRoute from "./routes/film.route.js";
 import { configDotenv } from "dotenv";
 import YAML from "yamljs";
 import {serve, setup} from "swagger-ui-express";
-import morganHttpHelper from "./utils/loggerHelper.js";
+import loggerHelper from "./utils/loggerHelper.js";
 configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
-app.use(morganHttpHelper)
+app.use(loggerHelper)
 const port = 3000;
 
 app.get('/', (req, res) => {

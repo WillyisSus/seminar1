@@ -1,0 +1,2 @@
+{"contentLength":"126","level":"warn","message":"400 POST /films","reqBody":"{\"language_id\":1,\"rental_duration\":2,\"rental_rate\":4.99,\"replacement_cost\":10.99}","responseTime":"4.058ms","timestamp":"2025-10-25T14:35:17.168Z"}
+{"contentLength":"172","level":"http","message":"200 POST /films","reqBody":"{\"title\":\"A new Film\",\"language_id\":1,\"rental_duration\":2,\"rental_rate\":4.99,\"replacement_cost\":10.99}","responseTime":"68.215ms","timestamp":"2025-10-25T14:36:28.553Z"}
