@@ -53,7 +53,7 @@ export const putActor = async (req, res) => {
         }, {
             where: {actor_id: reqId}
         })
-        res.json(updatedActor)
+        res.json({"updated_row": updatedActor})
     }else {
         res.status(400).send({msg: "Bad Request"})
     }

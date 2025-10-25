@@ -1,9 +1,0 @@
-{"contentLength":"20000","level":"http","message":"200 GET /actors","reqBody":"\"\"","responseTime":"21.668ms","timestamp":"2025-10-24T16:11:45.376Z"}
-{"contentLength":"101","level":"http","message":"200 GET /actors/1","reqBody":"\"\"","responseTime":"8.134ms","timestamp":"2025-10-24T16:11:59.942Z"}
-{"contentLength":"101","level":"http","message":"200 POST /actors","reqBody":"{\"first_name\":\"Ryan\",\"last_name\":\"Reynolds\"}","responseTime":"9.858ms","timestamp":"2025-10-24T16:12:01.910Z"}
-{"contentLength":"21","level":"warn","message":"400 POST /actors","reqBody":"{\"first_name\":\"Ryan\"}","responseTime":"0.291ms","timestamp":"2025-10-24T16:12:09.873Z"}
-{"contentLength":"3","level":"http","message":"200 PUT /actors/2","reqBody":"{\"first_name\":\"Vo\",\"last_name\":\"Viet Long\"}","responseTime":"16.607ms","timestamp":"2025-10-24T16:12:22.182Z"}
-{"contentLength":856,"level":"error","message":"500 DELETE /actors/1","reqBody":"\"\"","responseTime":"28.117ms","timestamp":"2025-10-24T16:12:35.799Z"}
-{"contentLength":"20100","level":"http","message":"200 GET /actors","reqBody":"\"\"","responseTime":"10.135ms","timestamp":"2025-10-24T16:14:40.124Z"}
-{"contentLength":"101","level":"http","message":"200 GET /actors/1","reqBody":"\"\"","responseTime":"1.906ms","timestamp":"2025-10-24T16:14:43.184Z"}
-{"contentLength":"101","level":"http","message":"200 POST /actors","reqBody":"{\"first_name\":\"Ryan\",\"last_name\":\"Reynolds\"}","responseTime":"8.878ms","timestamp":"2025-10-24T16:18:05.012Z"}

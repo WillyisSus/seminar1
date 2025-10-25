@@ -1,0 +1,46 @@
+{"contentLength":157,"level":"http","message":"301 GET /api-doc","reqBody":"\"\"","responseTime":"3.338ms","timestamp":"2025-10-25T06:11:12.273Z"}
+{"contentLength":"3106","level":"http","message":"200 GET /api-doc/","reqBody":"\"\"","responseTime":"2.046ms","timestamp":"2025-10-25T06:11:12.282Z"}
+{"contentLength":"18431","level":"http","message":"200 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.296ms","timestamp":"2025-10-25T06:11:12.362Z"}
+{"contentLength":155212,"level":"http","message":"200 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"8.361ms","timestamp":"2025-10-25T06:11:12.367Z"}
+{"contentLength":250335,"level":"http","message":"200 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"8.580ms","timestamp":"2025-10-25T06:11:12.373Z"}
+{"contentLength":1510217,"level":"http","message":"200 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"8.612ms","timestamp":"2025-10-25T06:11:12.383Z"}
+{"contentLength":628,"level":"http","message":"200 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"1.008ms","timestamp":"2025-10-25T06:11:12.629Z"}
+{"level":"http","message":"304 GET /api-doc/","reqBody":"\"\"","responseTime":"1.639ms","timestamp":"2025-10-25T06:11:53.341Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"1.007ms","timestamp":"2025-10-25T06:11:53.399Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"0.601ms","timestamp":"2025-10-25T06:11:53.401Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.236ms","timestamp":"2025-10-25T06:11:53.409Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"1.890ms","timestamp":"2025-10-25T06:11:53.410Z"}
+{"level":"http","message":"304 GET /api-doc/","reqBody":"\"\"","responseTime":"2.793ms","timestamp":"2025-10-25T06:21:12.988Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"2.136ms","timestamp":"2025-10-25T06:21:13.036Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"0.849ms","timestamp":"2025-10-25T06:21:13.039Z"}
+{"contentLength":"19596","level":"http","message":"200 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.410ms","timestamp":"2025-10-25T06:21:13.042Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"3.380ms","timestamp":"2025-10-25T06:21:13.044Z"}
+{"level":"http","message":"304 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"0.661ms","timestamp":"2025-10-25T06:21:13.209Z"}
+{"level":"http","message":"304 GET /api-doc/","reqBody":"\"\"","responseTime":"3.208ms","timestamp":"2025-10-25T06:23:37.013Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"1.976ms","timestamp":"2025-10-25T06:23:37.067Z"}
+{"contentLength":"19728","level":"http","message":"200 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.618ms","timestamp":"2025-10-25T06:23:37.073Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"4.954ms","timestamp":"2025-10-25T06:23:37.075Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"6.074ms","timestamp":"2025-10-25T06:23:37.077Z"}
+{"level":"http","message":"304 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"0.643ms","timestamp":"2025-10-25T06:23:37.211Z"}
+{"contentLength":"126","level":"warn","message":"400 PUT /films/1","reqBody":"{\"description\":\"A thrilling documentary...\",\"release_year\":2006,\"language_id\":1,\"original_language_id\":null,\"rental_duration\":6,\"rental_rate\":0.99,\"length\":86,\"replacement_cost\":20.99,\"rating\":\"PG\",\"special_features\":\"Deleted Scenes,Behind the Scenes\"}","responseTime":"3.264ms","timestamp":"2025-10-25T06:24:24.573Z"}
+{"level":"http","message":"304 GET /api-doc/","reqBody":"\"\"","responseTime":"0.549ms","timestamp":"2025-10-25T06:25:03.377Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"3.180ms","timestamp":"2025-10-25T06:25:03.433Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"3.137ms","timestamp":"2025-10-25T06:25:03.435Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"3.998ms","timestamp":"2025-10-25T06:25:03.436Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.391ms","timestamp":"2025-10-25T06:25:03.439Z"}
+{"level":"http","message":"304 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"0.635ms","timestamp":"2025-10-25T06:25:03.662Z"}
+{"date":"Sat Oct 25 2025 13:25:16 GMT+0700 (Indochina Time)","error":{"message":"Malformed inline YAML string ({\n{).","parsedLine":369,"snippet":"        {"},"exception":true,"level":"error","message":"uncaughtException: Malformed inline YAML string ({\n{).\n  No stack trace","os":{"loadavg":[0,0,0],"uptime":13420.468},"process":{"argv":["C:\\Program Files\\nodejs\\node.exe","D:\\HCMUS\\WEBPLUS\\seminar1\\backend\\index.js"],"cwd":"D:\\HCMUS\\WEBPLUS\\seminar1\\backend","execPath":"C:\\Program Files\\nodejs\\node.exe","gid":null,"memoryUsage":{"arrayBuffers":40232,"external":2635529,"heapTotal":55549952,"heapUsed":26138160,"rss":76218368},"pid":2116,"uid":null,"version":"v22.19.0"},"timestamp":"2025-10-25T06:25:16.058Z","trace":[]}
+{"level":"http","message":"304 GET /api-doc/","reqBody":"\"\"","responseTime":"3.056ms","timestamp":"2025-10-25T06:28:27.429Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"2.261ms","timestamp":"2025-10-25T06:28:27.512Z"}
+{"contentLength":"19715","level":"http","message":"200 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.612ms","timestamp":"2025-10-25T06:28:27.518Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"5.503ms","timestamp":"2025-10-25T06:28:27.520Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"6.239ms","timestamp":"2025-10-25T06:28:27.521Z"}
+{"level":"http","message":"304 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"0.652ms","timestamp":"2025-10-25T06:28:27.782Z"}
+{"date":"Sat Oct 25 2025 13:28:56 GMT+0700 (Indochina Time)","error":{"message":"Unexpected characters ().","parsedLine":371,"snippet":"            \"title\""},"exception":true,"level":"error","message":"uncaughtException: Unexpected characters ().\n  No stack trace","os":{"loadavg":[0,0,0],"uptime":13640.64},"process":{"argv":["C:\\Program Files\\nodejs\\node.exe","D:\\HCMUS\\WEBPLUS\\seminar1\\backend\\index.js"],"cwd":"D:\\HCMUS\\WEBPLUS\\seminar1\\backend","execPath":"C:\\Program Files\\nodejs\\node.exe","gid":null,"memoryUsage":{"arrayBuffers":40169,"external":2635466,"heapTotal":55812096,"heapUsed":26266096,"rss":75898880},"pid":5588,"uid":null,"version":"v22.19.0"},"timestamp":"2025-10-25T06:28:56.230Z","trace":[]}
+{"date":"Sat Oct 25 2025 13:29:10 GMT+0700 (Indochina Time)","error":{"message":"Unexpected characters ().","parsedLine":370,"snippet":"            \"title\""},"exception":true,"level":"error","message":"uncaughtException: Unexpected characters ().\n  No stack trace","os":{"loadavg":[0,0,0],"uptime":13655.265},"process":{"argv":["C:\\Program Files\\nodejs\\node.exe","D:\\HCMUS\\WEBPLUS\\seminar1\\backend\\index.js"],"cwd":"D:\\HCMUS\\WEBPLUS\\seminar1\\backend","execPath":"C:\\Program Files\\nodejs\\node.exe","gid":null,"memoryUsage":{"arrayBuffers":40171,"external":2635468,"heapTotal":55812096,"heapUsed":26005368,"rss":75907072},"pid":21400,"uid":null,"version":"v22.19.0"},"timestamp":"2025-10-25T06:29:10.861Z","trace":[]}
+{"contentLength":"3106","level":"http","message":"200 GET /api-doc/","reqBody":"\"\"","responseTime":"3.174ms","timestamp":"2025-10-25T06:30:37.468Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui.css","reqBody":"\"\"","responseTime":"2.487ms","timestamp":"2025-10-25T06:30:37.526Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-bundle.js","reqBody":"\"\"","responseTime":"1.354ms","timestamp":"2025-10-25T06:30:37.530Z"}
+{"contentLength":"20109","level":"http","message":"200 GET /api-doc/swagger-ui-init.js","reqBody":"\"\"","responseTime":"0.282ms","timestamp":"2025-10-25T06:30:37.533Z"}
+{"level":"http","message":"304 GET /api-doc/swagger-ui-standalone-preset.js","reqBody":"\"\"","responseTime":"8.123ms","timestamp":"2025-10-25T06:30:37.540Z"}
+{"level":"http","message":"304 GET /api-doc/favicon-32x32.png","reqBody":"\"\"","responseTime":"0.593ms","timestamp":"2025-10-25T06:30:37.746Z"}

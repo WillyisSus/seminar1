@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import Film from "../models/film.model.js";
 import Joi from "joi";
 const schema = Joi.object({
@@ -100,4 +101,57 @@ export const postFilm = async (req, res) => {
     }else{
         res.status(400).send({msg: "Bad Request"})
     }
+}
+
+export const putFilm = async (req, res) => {
+  const reqID = req.params.id
+  if (parseInt(reqID) <= 0 ){
+    res.status(400).send({msg: "Bad Request"})
+  }
+  const film = req.body;
+  if (film && reqID){
+      const {value, error} = schema.validate(film);
+      console.log(value, error)
+      if (error){
+          res.status(400).send({msg: error?.details})
+      }
+      try {
+          const updatedFilm =  await Film.update({
+              ...film
+          }, {
+            where: {
+              film_id: reqID
+          }})
+          if (updatedFilm){
+              res.json({"updated_row": updatedFilm})
+          }
+      } catch (error) {
+          res.status(500).send({msg: "Internal Server Error"})
+      }
+    
+  }else{
+      res.status(400).send({msg: "Bad Request"})
+  }
+}
+
+export const deleteFilm = async (req, res) => {
+  const reqID = req.params.id
+  if (parseInt(reqID) <= 0 ){
+    res.status(400).send({msg: "Bad Request"})
+  }
+  if (reqID){
+    try {
+      const deletedRows = await Film.destroy({
+        where: {
+          film_id: reqID
+        }
+      })
+      res.json({"deleted_rows": deletedRows})
+    } catch (error) {
+      res.status(500).send({msg: error})
+      
+    }
+  }else{
+    res.status(400).send({msg: "Bad Request"})
+  }
 }

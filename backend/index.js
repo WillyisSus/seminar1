@@ -11,9 +11,6 @@ configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
-// morgan.token('req-body', function (req, res){return req.body?JSON.stringify(req.body):'no-body'})
-// const customString = ':method :url :req-body :status :remote-addr - :remote-user  :res[content-length] - :response-time ms'
-// app.use(morgan(customString))
 app.use(morganHttpHelper)
 const port = 3000;
 
@@ -26,7 +23,6 @@ app.use('/films', filmRoute)
 app.use('/api-doc', serve, setup(swaggerDoc))
 const startServer = async () => {
     try {
-        // console.log(sequelize.config)
         await sequelize.authenticate();
         console.log("DATABASE CONNECTED!!!")
         await sequelize.sync({force:false});

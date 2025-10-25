@@ -39,6 +39,117 @@ components:
           type: string
           example: 'GUINESS'
         # --- ADD THIS NEW SECTION ---
+      required:
+        - first_name
+        - last_name
+    Film:
+      type: object
+      description: Return body from the server for a single film.
+      properties:
+        film_id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          maxLength: 255
+          example: 'ACADEMY DINOSAUR'
+        description:
+          type: string
+          nullable: true
+          example: 'A thrilling documentary...'
+        release_year:
+          type: integer
+          minimum: 1888
+          example: 2006
+        language_id:
+          type: integer
+          example: 1
+        original_language_id:
+          type: integer
+          nullable: true
+          example: null
+        rental_duration:
+          type: integer
+          example: 6
+        rental_rate:
+          type: number
+          format: float
+          example: 0.99
+        length:
+          type: integer
+          nullable: true
+          example: 86
+        replacement_cost:
+          type: number
+          format: float
+          example: 20.99
+        rating:
+          type: string
+          enum: ['G', 'PG', 'PG-13', 'R', 'NC-17']
+          default: 'G'
+          example: 'PG'
+        special_features:
+          type: string
+          nullable: true
+          example: 'Deleted Scenes,Behind the Scenes'
+        last_update:
+          type: string
+          format: date-time
+          description: The timestamp of when the record was last updated.
+          example: '2025-10-25T13:00:00.000Z'
+    BodyFilm:
+      type: object
+      description: Request body for POST and PUT methods for films.
+      properties:
+        title:
+          type: string
+          maxLength: 255
+          example: 'ACADEMY DINOSAUR'
+        description:
+          type: string
+          nullable: true
+          example: 'A thrilling documentary...'
+        release_year:
+          type: integer
+          minimum: 1888
+          example: 2006
+        language_id:
+          type: integer
+          example: 1
+        original_language_id:
+          type: integer
+          nullable: true
+          example: null
+        rental_duration:
+          type: integer
+          example: 6
+        rental_rate:
+          type: number
+          format: float
+          example: 0.99
+        length:
+          type: integer
+          nullable: true
+          example: 86
+        replacement_cost:
+          type: number
+          format: float
+          example: 20.99
+        rating:
+          type: string
+          enum: ['G', 'PG', 'PG-13', 'R', 'NC-17']
+          default: 'G'
+          example: 'PG'
+        special_features:
+          type: string
+          nullable: true
+          example: 'Deleted Scenes,Behind the Scenes'
+      required:
+        - title
+        - language_id
+        - rental_duration
+        - rental_rate
+        - replacement_cost
 paths:
   /actors:
     get:
@@ -98,7 +209,7 @@ paths:
           description: Actor not found.
     put:
       summary: Update a single actor by their ID.
-      description: Returns a single updated actor object if request is executed.
+      description: Returns the number of rows affected by the request
       parameters:
         - name: id
           in: path
@@ -106,6 +217,7 @@ paths:
           description: The numeric ID of the actor to retrieve.
           schema:
             type: integer
+            example: 1
       requestBody:
         description: Actor object to be updated
         required: true
@@ -115,10 +227,195 @@ paths:
               $ref: '#/components/schemas/BodyActor'
       responses:
         '200':
-          description: A successful response with a single actor.
+          description: A successful response with a numeric value
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Actor'
+                type: object
+                properties:
+                  updated_rows: 
+                    type: integer
+                    example: 1
         '404':
           description: Actor not found.
+    delete:
+      summary: Delete a single actor using an id.
+      description: Returns the number of rows affected by the request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the actor to delete.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: A successful response with a numeric value
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  updated_rows: 
+                    type: integer
+                    example: 1
+        '404':
+          description: Actor not found.
+  /films:
+    get:
+      summary: Retrieves a list of all films.
+      description: Returns an array of film objects.
+      responses:
+        '200':
+          description: A successful response with a list of films.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Film'
+        '500':
+          description: Internal Server Error.
+    post:
+      summary: Create a single film.
+      description: Returns a newly created film object if the request is valid.
+      requestBody:
+        description: Film object to be created
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BodyFilm'
+      responses:
+        '200':
+          description: A successful response with the newly created film.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Film'
+        '400':
+          description: Bad Request, likely due to validation errors.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: A body with error details returned by Joi validator            
+                properties:
+                  message:
+                    type: object
+                    example: {}
+  /films/{id}:
+    get:
+      summary: Retrieves a single film by its ID.
+      description: Returns a single film object.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the film to retrieve.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A successful response with a single film.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Film'
+        '404':
+          description: Film not found.
+        '500':
+          description: Internal Server Error.
+    put:
+      summary: Update a single film by its ID.
+      description: Returns the number of rows affected by the update.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the film to update.
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        description: Film object with fields to be updated.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BodyFilm'
+      responses:
+        '200':
+          description: A successful response with the number of rows updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  updated_row: 
+                    type: integer
+                    example: 1
+        '400':
+          description: Bad Request, likely due to validation errors.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: A body with error details returned by Joi validator            
+                properties:
+                  msg:
+                    type: object
+                    example: 
+                      message: '"title" is required'
+                      path:
+                      - title
+                      type: any.required
+                      context:
+                        label: title
+                        key: title
+        '500':
+          description: Internal Server Error.
+    delete:
+      summary: Delete a single film by its ID.
+      description: Returns the number of rows affected by the delete operation.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The numeric ID of the film to delete.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: A successful response with the number of rows deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted_rows: 
+                    type: integer
+                    example: 1
+        '400':
+          description: Bad Request message, usually by missing parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg: 
+                    type: string
+                    example: "Bad Request"
+                
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg: 
+                    type: string
+                    example: "Internal Server Error"
