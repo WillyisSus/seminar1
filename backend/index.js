@@ -2,15 +2,18 @@ import express from "express";
 import sequelize from "./configs/database.js";
 import actorRoute from "./routes/actor.route.js";
 import filmRoute from "./routes/film.route.js";
+import authRoute from "./routes/auth.route.js";
+import cookieParser from "cookie-parser";
 import { configDotenv } from "dotenv";
 import YAML from "yamljs";
 import {serve, setup} from "swagger-ui-express";
-import loggerHelper from "./utils/loggerHelper.js";
+import loggerHelper from "./middlewares/morgan.middleware.js";
 import { ipChecker } from "./utils/ipChecker.js";
 configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
+app.use(cookieParser())
 app.set('trust proxy', 1);
 app.use(loggerHelper)
 app.use(ipChecker)
@@ -23,6 +26,7 @@ app.get('/', (req, res) => {
 
 app.use('/actors', actorRoute)
 app.use('/films', filmRoute)
+app.use('/auth', authRoute)
 app.use('/api-doc', serve, setup(swaggerDoc))
 const startServer = async () => {
     try {

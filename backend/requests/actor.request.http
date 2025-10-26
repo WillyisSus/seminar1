@@ -10,6 +10,7 @@ Content-Type: application/json
   "last_name": "Reynolds"
 }
 ###
+# @no-cookie-jar
 POST http://localhost:3000/actors
 Content-Type: application/json
 

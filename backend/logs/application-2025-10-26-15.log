@@ -1,0 +1,9 @@
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.912ms","timestamp":"2025-10-26T08:00:15.928Z"}
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.866ms","timestamp":"2025-10-26T08:00:16.457Z"}
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.544ms","timestamp":"2025-10-26T08:00:16.817Z"}
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.515ms","timestamp":"2025-10-26T08:00:17.098Z"}
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.477ms","timestamp":"2025-10-26T08:00:17.254Z"}
+{"contentLength":"23","level":"error","message":"500 DELETE /films/1","reqBody":"\"\"","reqIP":"::ffff:127.0.0.1","responseTime":"0.641ms","timestamp":"2025-10-26T08:00:17.397Z"}
+{"contentLength":"21","level":"warn","message":"400 POST /actors","reqBody":"{\"first_name\":\"Ryan\"}","reqIP":"::ffff:127.0.0.1","responseTime":"11.760ms","timestamp":"2025-10-26T08:01:34.376Z"}
+{"contentLength":"21","level":"warn","message":"400 POST /actors","reqBody":"{\"first_name\":\"Ryan\"}","reqIP":"::ffff:127.0.0.1","responseTime":"6.384ms","timestamp":"2025-10-26T08:01:49.857Z"}
+{"contentLength":"23","level":"error","message":"500 POST /actors","reqBody":"{\"first_name\":\"Ryan\"}","reqIP":"::ffff:127.0.0.1","responseTime":"0.792ms","timestamp":"2025-10-26T08:02:06.724Z"}

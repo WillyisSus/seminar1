@@ -1,10 +1,20 @@
-GET http://localhost:3000/films
-###
 
 GET http://localhost:3000/films
-X-Forwarded-For: 8.8.8.8
+###
+GET http://localhost:3000/films
 ###
 GET http://localhost:3000/films/1
+###
+# @no-cookie-jar
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+    "language_id": 1,
+    "rental_duration": 2,
+    "rental_rate": 4.99,
+    "replacement_cost": 10.99
+}
 ###
 POST http://localhost:3000/films
 Content-Type: application/json
@@ -27,8 +37,10 @@ Content-Type: application/json
     "replacement_cost": 10.99
 }
 ###
+# @no-cookie-jar
 DELETE  http://localhost:3000/films/1
 ###
+# @no-cookie-jar
 PUT http://localhost:3000/films/2
 Content-Type: application/json
 

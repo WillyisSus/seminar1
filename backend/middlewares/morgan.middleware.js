@@ -1,5 +1,5 @@
 import morgan from "morgan";
-import logger from "./logger.js"
+import logger from "../utils/logger.js"
 morgan.token('ip', function(req, res) {return req?.ip})
 morgan.token('req-body', function(req, res){return JSON.stringify(req.body?req.body:'')})
 const loggerHelper = morgan((tokens, req, res ) => {
