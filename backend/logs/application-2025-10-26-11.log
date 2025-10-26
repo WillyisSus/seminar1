@@ -1,0 +1,15 @@
+{"contentLength":"26","level":"http","message":"200 GET /","reqBody":"\"\"","responseTime":"1.618ms","timestamp":"2025-10-26T04:37:48.145Z"}
+{"contentLength":150,"level":"warn","message":"404 GET /favicon.ico","reqBody":"\"\"","responseTime":"1.021ms","timestamp":"2025-10-26T04:37:48.824Z"}
+{"level":"http","message":"304 GET /","reqBody":"\"\"","responseTime":"1.576ms","timestamp":"2025-10-26T04:39:36.748Z"}
+{"contentLength":"26","level":"http","message":"200 GET /","reqBody":"\"\"","responseTime":"1.488ms","timestamp":"2025-10-26T04:48:55.712Z"}
+{"contentLength":"26","level":"http","message":"200 GET /","reqBody":"\"\"","responseTime":"0.375ms","timestamp":"2025-10-26T04:49:14.443Z"}
+{"level":"http","message":"304 GET /","reqBody":"\"\"","responseTime":"1.489ms","timestamp":"2025-10-26T04:49:21.508Z"}
+{"level":"http","message":"304 GET /","reqBody":"\"\"","responseTime":"1.582ms","timestamp":"2025-10-26T04:49:26.937Z"}
+{"contentLength":150,"level":"warn","message":"404 GET /favicon.ico","reqBody":"\"\"","responseTime":"1.167ms","timestamp":"2025-10-26T04:51:54.094Z"}
+{"contentLength":"26","level":"http","message":"200 GET /","reqBody":"\"\"","responseTime":"0.261ms","timestamp":"2025-10-26T04:51:55.377Z"}
+{"level":"http","message":"304 GET /","reqBody":"\"\"","responseTime":"0.300ms","timestamp":"2025-10-26T04:51:59.358Z"}
+{"contentLength":"412309","level":"http","message":"200 GET /films","reqBody":"\"\"","responseTime":"38.478ms","timestamp":"2025-10-26T04:52:37.234Z"}
+{"contentLength":"412309","level":"http","message":"200 GET /films","reqBody":"\"\"","responseTime":"18.084ms","timestamp":"2025-10-26T04:52:42.510Z"}
+{"contentLength":"412309","level":"http","message":"200 GET /films","reqBody":"\"\"","responseTime":"26.199ms","timestamp":"2025-10-26T04:55:10.784Z"}
+{"contentLength":"412309","level":"http","message":"200 GET /films","reqBody":"\"\"","responseTime":"40.568ms","timestamp":"2025-10-26T04:59:21.846Z"}
+{"contentLength":"412309","level":"http","message":"200 GET /films","reqBody":"\"\"","responseTime":"23.209ms","timestamp":"2025-10-26T04:59:27.017Z"}

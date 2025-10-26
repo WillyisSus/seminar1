@@ -6,11 +6,15 @@ import { configDotenv } from "dotenv";
 import YAML from "yamljs";
 import {serve, setup} from "swagger-ui-express";
 import loggerHelper from "./utils/loggerHelper.js";
+import { ipChecker } from "./utils/ipChecker.js";
 configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
+app.set('trust proxy', 1);
 app.use(loggerHelper)
+app.use(ipChecker)
+
 const port = 3000;
 
 app.get('/', (req, res) => {
