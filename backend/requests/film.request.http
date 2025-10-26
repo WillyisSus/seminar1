@@ -2,6 +2,10 @@
 GET http://localhost:3000/films
 ###
 GET http://localhost:3000/films
+X-Forwarded-For: 8.8.8.8 
+###
+GET http://localhost:3000/films
+X-Forwarded-For: 192.168.0.127
 ###
 GET http://localhost:3000/films/1
 ###

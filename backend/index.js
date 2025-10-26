@@ -13,10 +13,10 @@ configDotenv()
 const swaggerDoc = YAML.load('./openapi.yaml')
 const app = express();
 app.use(express.json());
-app.use(cookieParser())
 app.set('trust proxy', 1);
-app.use(loggerHelper)
+app.use(cookieParser())
 app.use(ipChecker)
+app.use(loggerHelper)
 
 const port = 3000;
 

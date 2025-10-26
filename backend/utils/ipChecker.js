@@ -1,11 +1,11 @@
 import ipRangeCheck from "ip-range-check"
 
-const ALLOWED_IPS = ["127.0.0.1"];
+const ALLOWED_IPS = ["127.0.0.1", "192.168.0.0/24"];
 
 export const ipChecker = (req, res, next) => {
   const clientIp = req.ip;
 
-  // Check if the client's IP is in our allowed list
+  // Check if the client's IP is in allowed list
   if (ipRangeCheck(clientIp, ALLOWED_IPS)) {
     // IP is allowed, proceed to the next route
     next();

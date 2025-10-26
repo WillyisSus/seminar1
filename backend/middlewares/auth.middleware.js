@@ -1,4 +1,4 @@
-import jwt, { decode } from "jsonwebtoken"
+import jwt from "jsonwebtoken"
 import User from "../models/user.model.js";
 
 export const protectRoute = async (req, res, next) => {
@@ -16,7 +16,7 @@ export const protectRoute = async (req, res, next) => {
         if (!user){
             res.status(401).json({msg: "Invalid User - Please login for new token"})
         }
-        req.user = user?.username
+        req.user = user.username
         next();
     } catch (error) {
         console.log("Auth Middleware: ", error.message);
